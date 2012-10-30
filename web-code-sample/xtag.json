@@ -1,0 +1,25 @@
+{	
+	"name": "Web Code Sample",
+	"tagName": "x-web-code-sample",
+	"version": "0.0.1",
+	"author": "louisremi",
+	"description": "Build a preview from HTML, JS & CSS code in a sandboxed iframe.",
+	"images": [],	
+	"categories": ["structural"],
+	"demo": "demo",
+	"compatibility": {
+		"firefox": 17,
+		"chrome": 20,
+		"ie": 10,
+		"opera": 12
+	},
+	"documentation": {
+		"description": "",
+		"attributes": {},
+		"events": {
+			"ready": "Triggered when the preview has been built."
+		},
+		"getters": {},
+		"setters": {}
+	}
+}

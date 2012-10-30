@@ -1,0 +1,2 @@
+x-web-code-sample .preview { display: none; }
+x-web-code-sample.ready .preview { display: block; }
