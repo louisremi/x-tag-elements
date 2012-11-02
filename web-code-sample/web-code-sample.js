@@ -6,43 +6,43 @@
 
     xtag.register('x-web-code-sample', {
         onInsert: function() {
-            var $this = this.firstElementChild.parentNode,
+            var self = this,
                 source = {
                     markup: '',
                     javascript: '',
                     css: ''
                 },
-                $preview = $this.querySelector('.preview'),
+                preview = this.querySelector('.preview'),
                 iframe;
 
             // collect and highlight source code
             Object.keys( source ).forEach(function(key) {
                 // TODO: make it possible to overwrite this default selector
-                var $code = $this.querySelector( '.language-' + key );
+                var code = self.querySelector( '.language-' + key );
 
-                if ( $code && $code.childNodes.length ) {
+                if ( code && code.childNodes.length ) {
                     // collect the cource code for this web language
-                    if ( canSandbox && $preview ) {
+                    if ( canSandbox && preview ) {
                         // node value is the decoded equivalent of innerHTML
-                        source[ key ] = $code.childNodes[0].nodeValue;
+                        source[ key ] = code.childNodes[0].nodeValue;
                     }
 
                     // It's now time to highlight the source
-                    if ( window.Prism ) {console.log( $code )
-                        Prism.highlightElement( $code );
+                    if ( window.Prism ) {
+                        Prism.highlightElement( code );
                     }
                 }  
             });
 
             // build the preview
-            if ( canSandbox && $preview ) {
+            if ( canSandbox && preview ) {
                 iframe = document.createElement('iframe');
                 iframe.frameBorder = '0';
                 iframe.width = '100%';
                 iframe.height = '100%';
 
-                $preview.appendChild( iframe );
-                $this.classList.add('ready');
+                preview.appendChild( iframe );
+                this.classList.add('ready');
 
                 // we can't manipulate the iframe's DOM once it's sandboxed
                 // so we'll set its content as a data-url
