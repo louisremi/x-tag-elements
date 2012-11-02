@@ -1,7 +1,7 @@
 xtag-web-code-sample
 =============
 
-This build a preview from HTML, JS & CSS code in a sandboxed iframe. It depends on [prismjs](http://prismjs.com/), included in manual mode: `<script src="prism.js" data-manual></script>`.
+This build a preview from HTML, JS & CSS code in a sandboxed iframe. You can optionnaly load [prismjs](http://prismjs.com/) into your page for syntax highlighting of the code samples. If you do so, make sur to activate its manual mode: `<script src="prism.js" data-manual></script>`.
 
 
 Example:
